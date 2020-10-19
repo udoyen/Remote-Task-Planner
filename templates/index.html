@@ -1,0 +1,15 @@
+{% extends "structure.html"%}
+
+{% block main %}
+
+<p class="center">Welcome to the dashboard, please enter you credential to see your daily task schedule</p>
+<br>
+<br>
+<form action="/" method="POST" class="center">
+    <input placeholder="Userame" name="username" type="text">
+    <input placeholder="Password" name="password" type="password">
+    <input type="submit"> 
+</form>
+
+<p>{{ message }}</p>
+{% endblock main %}
