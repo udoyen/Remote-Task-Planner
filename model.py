@@ -1,6 +1,6 @@
 import sqlite3
 
-def show_age(username):
+def login(username):
 
     connection = sqlite3.connect('app.db', check_same_thread=False)
     cursor = connection.cursor()
@@ -11,6 +11,3 @@ def show_age(username):
     connection.commit()
     cursor.close()
     connection.close()
-
-    message = '{username}\'s age is {age}.'.format(username=username, age=age)
-    return message 

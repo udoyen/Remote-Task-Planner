@@ -7,11 +7,9 @@ cursor.execute(
     """INSERT INTO users(
         username,
         password,
-        age
     )VALUES (
         'godlove',
         'godlove',
-        26
     );"""    
 )
 
