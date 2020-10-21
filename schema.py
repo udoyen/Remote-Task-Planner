@@ -9,7 +9,6 @@ cursor.execute(
         username VARCHAR(16),
         password VARCHAR(32)
     );"""
-
 )
 
 connection.commit()

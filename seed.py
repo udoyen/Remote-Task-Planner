@@ -9,7 +9,7 @@ cursor.execute(
         password,
     )VALUES (
         'godlove',
-        'godlove',
+        'godlove'
     );"""    
 )
 
