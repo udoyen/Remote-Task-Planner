@@ -9,21 +9,18 @@ user = model.check_users()
 
 @app.route('/', methods = ['GET'])
 def home():
-    if 'username' in session:
-        g.user=session['username']
-        return render_template('about.html')
-    return render_template('homepage.html', message = 'Login OR Sigup!')
+    return render_template('signin.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        session.pop('usernam', None)
+        session.pop('username', None)
         areyouuser = request.form['username']
         pwd = model.check_pwd(areyouuser)
         if request.form['password'] == pwd:
             session['username'] = request.form['username']
-            return redirect(url_for('home'))
+            return redirect(url_for('about'))
     return render_template('signin.html')
 
 '''if request.method == 'GET':

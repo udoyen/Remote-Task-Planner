@@ -1,16 +1,18 @@
 {% extends "structure.html"%}
 
 {% block main %}
+
 <link href="/static/css/signin.css" rel="stylesheet">
+    <br>
     <br>
     <form action="/login" method="POST" class="form-signin" class="text-center">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <p>Please use godlove and username and godlove as password for testing purpose</p>
         <input type="text" id="inputEmail" class="form-control" placeholder="username" name="username" required autofocus>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
         <div class="checkbox mb-3">
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button><br>
         <a href="/signup">Click here to sign up</a>
-        <a href="/">Back To Home Page</a>
     </form>
 
     <p>{{ message }}</p>
