@@ -5,3 +5,7 @@ Web application develop using the language python3, flask and database SQLite3, 
 ## Project Specifications:
 
 - Python 3.6
+
+## App Engine Deployment
+
+Simple run `gcloud app deploy` from the **app** folder
