@@ -14,3 +14,7 @@ Simple run `gcloud app deploy` from the **app** folder
 
 - Dockerfile
 - app.yaml
+
+### Local Test
+
+Run `python3 demo.py` in the app folder
