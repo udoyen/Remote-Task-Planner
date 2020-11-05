@@ -1,0 +1,21 @@
+runtime: custom
+env: flex
+instance_class: F4
+service: kwela-flask
+entrypoint: gunicorn -b :$PORT demo:app
+
+runtime_config:
+  # You can also specify 2 for Python 2.7
+  python_version: 3
+
+network:
+  instance_tag: kwela 
+  name: deploy-network
+
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 2
+  cool_down_period_sec: 180
+  cpu_utilization:
+    target_utilization: 0.8
+  target_concurrent_requests: 10

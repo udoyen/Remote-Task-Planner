@@ -7,7 +7,8 @@ app.secret_key = 'my-SECRET_key'
 username = ''
 user = model.check_users()
 
-@app.route('/', methods = ['GET'])
+
+@app.route('/', methods=['GET'])
 def home():
     return render_template('signin.html')
 
@@ -22,6 +23,7 @@ def login():
             session['username'] = request.form['username']
             return redirect(url_for('about'))
     return render_template('signin.html')
+
 
 '''if request.method == 'GET':
         return render_template('index.html')
@@ -40,12 +42,11 @@ def login():
 @app.before_request
 def before_request():
     g.username = None
-    if 'username'  in session:
+    if 'username' in session:
         g.username = session['username']
 
 
-
-@app.route('/signup', methods = ['GET', 'POST'])
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'GET':
         message = "please sign up"
@@ -56,6 +57,7 @@ def signup():
         age = request.form["age"]
         message = model.signup(username, password, age)
         return render_template("signup.html", message=message)
+
 
 @app.route('/getsession')
 def getsession():
@@ -69,22 +71,21 @@ def logout():
     session.pop('username', None)
     return redirect(url_for('home'))
 
-    
 
-@app.route('/about', methods = ['GET'])
+@app.route('/about', methods=['GET'])
 def about():
     return render_template('about.html')
 
 
-
-@app.route('/terms of use', methods = ['GET'])
+@app.route('/terms of use', methods=['GET'])
 def term_of_use():
     return render_template('term_of_use.html')
 
 
-@app.route('/privacy', methods = ['GET'])
+@app.route('/privacy', methods=['GET'])
 def privacy():
     return render_template('privacy.html')
 
+
 if __name__ == '__main__':
-    app.run(port=7000, debug=True)
+    app.run(port=8080, debug=True, host="0.0.0.0")
