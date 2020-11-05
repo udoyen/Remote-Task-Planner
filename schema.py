@@ -7,8 +7,10 @@ cursor.execute(
     """CREATE TABLE users(
         pk INTEGER PRIMARY KEY AUTOINCREMENT,
         username VARCHAR(16),
-        password VARCHAR(32)
+        password VARCHAR(32),
+        age INTEGER(5)
     );"""
+
 )
 
 connection.commit()

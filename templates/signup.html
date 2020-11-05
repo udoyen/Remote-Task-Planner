@@ -1,0 +1,16 @@
+{% extends "structure.html"%}
+
+{% block main %}
+<link href="/static/css/signin.css" rel="stylesheet">
+<br>
+<form action="/signup" method="POST" class="form-signin" class="text-center">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+    <input type="text" id="inputEmail" class="form-control" placeholder="username" name="username" required autofocus>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+    <input placeholder="Age" name="age" type="text" class="form-control" required><br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button><br>
+    <a href="/login">Click here to sign in</a>
+    <a href="/">Back To Home Page</a>
+</form>
+
+{% endblock main %}
