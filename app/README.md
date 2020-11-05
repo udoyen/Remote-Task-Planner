@@ -9,3 +9,8 @@ Web application develop using the language python3, flask and database SQLite3, 
 ## App Engine Deployment
 
 Simple run `gcloud app deploy` from the **app** folder
+
+### Requirements for deployment
+
+- Dockerfile
+- app.yaml
