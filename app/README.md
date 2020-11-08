@@ -18,3 +18,7 @@ Simple run `gcloud app deploy` from the **app** folder
 ### Local Test
 
 Run `python3 demo.py` in the app folder
+
+## Cloud Run
+
+See [here](https://cloud.google.com/cloud-build/docs/deploying-builds/deploy-cloud-run) for details on how to setup CI&CD for cloud run

@@ -1,6 +1,25 @@
-steps:
-- name: 'gcr.io/cloud-builders/gcloud'
-  id: 'kwelo'
-  args: ['app', 'deploy']
-  dir: './app'
-timeout: '1600s'
+ steps:
+ # Build the container image
+ - name: 'gcr.io/cloud-builders/docker'
+   args: ['build', '-t', 'gcr.io/$PROJECT_ID/kwelo-service:$COMMIT_SHA', '.']
+   dir: './app'
+ # Push the container image to Container Registry
+ - name: 'gcr.io/cloud-builders/docker'
+   args: ['push', 'gcr.io/$PROJECT_ID/kwelo-service:$COMMIT_SHA']
+   dir: './app'
+ # Deploy container image to Cloud Run
+ - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+   entrypoint: gcloud
+   dir: './app'
+   args:
+   - 'run'
+   - 'deploy'
+   - 'kwelo-service'
+   - '--image'
+   - 'gcr.io/$PROJECT_ID/kwelo-service:$COMMIT_SHA'
+   - '--region'
+   - 'us-central1'
+   - '--platform'
+   - 'managed'
+ images:
+ - 'gcr.io/$PROJECT_ID/kwelo-service:$COMMIT_SHA'
