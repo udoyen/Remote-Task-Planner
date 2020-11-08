@@ -1,5 +1,5 @@
 steps:
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  - name: 'gcr.io/cloud-builders/gcloud'
     id: 'kwelo'
     entrypoint: 'sh'
     dir: './app'
@@ -7,12 +7,11 @@ steps:
       - '-c'
       - |
          apt-get update && apt-get upgrade -y && \
-         apt-get install apt-utils -y && \
-         apt-get install sqlite3 -y;
-         apt-get install python3-pip -y && \
-         pip install flask && \
+         apt-get install apt-utils sqlite3 -y
+         apt-get install -y python2-pip
+         pip install flask
          pip freeze > requirements.txt && \
          pip install --no-cache-dir -r requirements.txt 
-         python3 ./demo.py
+         python ./demo.py
 
 timeout: "1600s"
