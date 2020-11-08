@@ -21,5 +21,17 @@
    - 'us-central1'
    - '--platform'
    - 'managed'
+ - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+   entrypoint: gcloud
+   dir: './app'
+   args:
+     - 'run'
+     - 'services'
+     - 'add-iam-policy-binding'
+     - 'kwelo-service'
+     - '--member'
+     - 'allUsers'
+     - '--role'
+     - 'roles/run.invoker'
  images:
  - 'gcr.io/$PROJECT_ID/kwelo-service:$COMMIT_SHA'
