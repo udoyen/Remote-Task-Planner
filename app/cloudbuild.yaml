@@ -1,0 +1,6 @@
+steps:
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: 'kwelo'
+    entrypoint: 'gcloud'
+    dir: './app'
+    args: ['app', 'deploy']
