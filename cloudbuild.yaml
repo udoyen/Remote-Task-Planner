@@ -33,5 +33,7 @@
      - 'allUsers'
      - '--role'
      - 'roles/run.invoker'
+     - '--platform'
+     - 'managed'
  images:
  - 'gcr.io/$PROJECT_ID/kwelo-service:$COMMIT_SHA'
