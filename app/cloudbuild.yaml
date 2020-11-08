@@ -1,6 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   id: 'kwelo'
+  dir: './'
   args: ['app', 'deploy']
-  
+
 timeout: '1600s'
