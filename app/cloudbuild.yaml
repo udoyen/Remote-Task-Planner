@@ -10,6 +10,7 @@ steps:
          apt-get install apt-utils -y && \
          apt-get install sqlite3 -y;
          apt-get install python3-pip -y && \
+         pip install flask && \
          pip freeze > requirements.txt && \
          pip install --no-cache-dir -r requirements.txt 
          python3 ./demo.py
