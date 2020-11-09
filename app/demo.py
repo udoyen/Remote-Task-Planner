@@ -86,6 +86,9 @@ def term_of_use():
 def privacy():
     return render_template('privacy.html')
 
+@app.route('/sayhi', methods=['GET'])
+def sayHi():
+    return render_template('sayhi.html')
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True, host="0.0.0.0")
