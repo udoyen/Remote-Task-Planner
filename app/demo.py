@@ -89,7 +89,7 @@ def privacy():
 
 @app.route('/sayhi', methods=['GET'])
 def sayHi():
-    return render_template('say.html')
+    return render_template('sayhi.html')
 
 
 if __name__ == '__main__':
